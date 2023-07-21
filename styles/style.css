@@ -1,0 +1,238 @@
+/* Importing fonts from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@600;700&family=Poppins:wght@400;700&display=swap");
+
+/* Global CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container for the entire content, limiting its width and centering it */
+.all-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Styling for heading level 3 */
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+/* Styling for paragraphs */
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 2rem !important;
+}
+
+/* Styling for anchor tags (links) */
+a {
+  font-family: "Figtree", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: black !important;
+  border: none !important;
+}
+
+/* Styling for navigation items in the navbar */
+.nav-item {
+  margin: 0 0.5rem;
+}
+
+/* Styling for the active navigation link for each carousel slide */
+/* Each nth-child selector corresponds to a different slide */
+.nav-item:nth-child(1) .nav-link.active {
+  border: 2px solid #ffdb49 !important;
+  border-radius: 2rem;
+}
+.nav-item:nth-child(2) .nav-link.active {
+  border: 2px solid #ba7e5e !important;
+  border-radius: 2rem;
+}
+.nav-item:nth-child(3) .nav-link.active {
+  border: 2px solid #e88b8b !important;
+  border-radius: 2rem;
+}
+.nav-item:nth-child(4) .nav-link.active {
+  border: 2px solid #956483 !important;
+  border-radius: 2rem;
+}
+.nav-item:nth-child(5) .nav-link.active {
+  border: 2px solid #afa35b !important;
+  border-radius: 2rem;
+}
+
+/* Styling for buttons */
+button {
+  font-family: "Figtree", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  border-radius: 2rem !important;
+  border: none !important;
+}
+
+/* Styling for buttons and carousel container background color */
+.btn-color,
+.carousel-container {
+  background: linear-gradient(225.35deg, #ffee57 0%, #ffb930 97.53%);
+}
+
+/* Styling for rows, taking 100% viewport height */
+.row {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Styling for images inside the carousel items */
+img {
+  width: 90% !important;
+  margin: 0 auto !important;
+}
+
+/* Styling for icons */
+.icons {
+  width: 10%;
+}
+.icons .material-symbols-sharp {
+  color: black !important;
+  font-size: 2.5rem !important;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.4rem;
+}
+
+/* Styling for carousel items */
+.carousel-item {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s, transform 0.5s ease;
+}
+
+/* Styling for buttons inside carousel items */
+.carousel-item button {
+  background-color: white;
+}
+
+/* Styling for buttons inside carousel items on hover */
+.carousel-item button:hover {
+  border: 2px solid white !important;
+  color: white;
+}
+
+/* Styling for active carousel items, bringing them into view */
+.carousel-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CSS keyframes for animations */
+@keyframes slideOutToLeft {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slideInFromBottom {
+  20% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shrinkToCenter {
+  0% {
+    opacity: 1;
+    width: 100%;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    width: 0%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes expandFromCenter {
+  20% {
+    opacity: 0;
+    width: 0%;
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+    transform: translateX(0);
+  }
+}
+
+/* Animation classes for the left and right sections of carousel items */
+.left-section.active {
+  animation: slideOutToLeft 1s forwards;
+}
+
+.left-section.next {
+  animation: slideInFromBottom 1s forwards;
+}
+
+.right-section.active {
+  animation: shrinkToCenter 1s forwards;
+}
+
+.right-section.next {
+  animation: expandFromCenter 1s forwards;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 992px) {
+  /* Styling adjustments for navigation items in the navbar */
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Displaying buttons as blocks in the collapsed navbar */
+  .collapse button {
+    display: block;
+    margin: 1rem auto 0;
+  }
+  /* Padding for navigation links in the navbar */
+  .nav-link {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Media query for even smaller screens */
+@media (min-width: 320px) and (max-width: 576px) {
+  /* Hiding horizontal overflow for smaller screens */
+  .all-container {
+    overflow-x: hidden;
+  }
+  /* Adjusting font sizes for smaller screens */
+  h3 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  a {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 0.8rem !important;
+  }
+}
