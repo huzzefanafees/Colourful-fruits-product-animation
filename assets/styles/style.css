@@ -7,19 +7,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Container for the entire content, limiting its width and centering it */
-.all-container {
+.wrapper {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
 }
-
 /* Styling for heading level 3 */
 h3 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 5rem;
+  font-size: 5.5rem;
   margin-bottom: 1rem;
 }
 
@@ -43,6 +40,14 @@ a {
 /* Styling for navigation items in the navbar */
 .nav-item {
   margin: 0 0.5rem;
+}
+.nav-link {
+  border: 2px solid transparent !important;
+  border-radius: 2rem;
+}
+
+.collapse button {
+  width: 8rem !important;
 }
 
 /* Styling for the active navigation link for each carousel slide */
@@ -84,9 +89,9 @@ button {
 }
 
 /* Styling for rows, taking 100% viewport height */
-.row {
+.row-container {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 139px);
 }
 
 /* Styling for images inside the carousel items */
@@ -198,21 +203,38 @@ img {
 }
 
 /* Media query for smaller screens */
+@media (max-width: 1200px) {
+  .row-container {
+    width: 100%;
+    height: calc(100vh - 126.91px);
+  }
+}
 @media (max-width: 992px) {
-  /* Styling adjustments for navigation items in the navbar */
-  .nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  /* Displaying buttons as blocks in the collapsed navbar */
-  .collapse button {
-    display: block;
-    margin: 1rem auto 0;
-  }
   /* Padding for navigation links in the navbar */
   .nav-link {
     padding: 0.5rem 1rem;
+    margin-bottom: 0.3rem;
+  }
+  .row-container {
+    width: 100%;
+    height: calc(100vh - 71.48px);
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+  img {
+    width: 60% !important;
+    margin: 0 auto !important;
+  }
+  .navbar-brand img {
+    width: 70% !important;
+  }
+  .icons .material-symbols-sharp {
+    font-size: 2rem !important;
   }
 }
 
@@ -222,17 +244,27 @@ img {
   .all-container {
     overflow-x: hidden;
   }
+  .row-container {
+    width: 100%;
+    height: calc(100vh - 64.98px);
+  }
   /* Adjusting font sizes for smaller screens */
   h3 {
-    font-size: 3rem;
-  }
-  p {
-    font-size: 0.9rem;
-  }
-  a {
     font-size: 1rem;
   }
-  button {
+  p {
+    font-size: 0.6rem;
+  }
+  a {
+    font-size: 0.7rem;
+  }
+  .text-container button {
     font-size: 0.8rem !important;
+  }
+  .navbar-brand img {
+    width: 60% !important;
+  }
+  .icons .material-symbols-sharp {
+    font-size: 1.5rem !important;
   }
 }
